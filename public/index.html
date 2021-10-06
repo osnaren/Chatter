@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chat App</title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="img/chat.ico" rel="icon" type="image/ico">
+    <link href="css/style.css" media="all" rel="stylesheet">
+    <link href="css/button.css" media="all" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script>
+        var name = prompt("Please enter your name");
+    </script>
+
+</head>
+<body>
+<div class="container content" id="m">
+
+    <div id="intro">
+        <h1 class="title_h">Chatter
+            <div class="outer">
+                <div class="inner" id="exiter">
+                    <label>Exit</label>
+                </div>
+            </div>
+        </h1>
+
+    </div>
+    <div class="row" id="chat-cnt">
+        <div class="col">
+            <div class="card">
+                <div class="card-body height3">
+                    <ul class="chat-list" id="messages">
+                        <p class="joinleft" style="display:none">vanakkam</p>
+                        <li class="in" style="display:none">
+                            <div class="chat-img">
+                                <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <h5>xyxy<span class="time_date">12.00</span></h5>
+                                    <p>xxxyyy</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="out" style="display: none">
+                            <div class="chat-img">
+                                <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <h5>Serena <span class="time_date">12.00</span></h5>
+                                    <p>Next level veard</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="typing" id="typing"></div>
+                <form action="" id="ch-form">
+                    <input id="msgin" placeholder="Type a message..." autocomplete="off" required/>
+                    <button id="sendbtn">Send</button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.socket.io/4.2.0/socket.io.min.js"
+        integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/extra.js"></script>
+<script>
+    newUserConnected(name);
+    var msgin = document.getElementById('msgin');
+    socket.emit('joining msg', name);
+    //console.log(name);
+    $('form').submit(function (e) {
+        e.preventDefault();
+        return false;
+    });
+    socket.on('chat message', function (message) {
+        var tmsg = String(message.msg);
+        var tname = String(name);
+        //console.log(tname, tmsg);
+        if (tmsg.includes(tname)) {
+            tmsg = tmsg.replace(tname, "You");
+        }
+        $('#messages').append($('<p class="col joinleft"></p>').text(tmsg));
+    });
+
+</script>
+</body>
+</html>

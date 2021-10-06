@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#m-cnt {
+    margin-top: 20px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+#intro {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    margin: 12px;
+    color: #FFFFFF;
+    height: 5%;
+    text-align: center;
+    font-family: "Caveat", Times, serif;
+    border-radius: 5px;
+}
+
+
+#chat-cnt {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+body {
+    background-image: url("../img/chat_bg.jpg") !important;
+}
+
+.card {
+    font-size: 20px;
+    background-image: url("../img/innerbg.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+form {
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+    padding: 3px;
+    bottom: 5px;
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+form input {
+    border-radius: 25px;
+    background-color: aliceblue;
+    border: 0;
+    padding: 10px;
+    padding-left: 20px;
+    width: 87%;
+    margin-right: 0.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+#messages {
+    max-height: 80vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 50px;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+#messages.joinleft {
+    justify-content: center;
+}
+
+#messages li {
+    padding: 5px 10px;
+}
+
+#typing {
+    bottom: 50px;
+    position: absolute;
+    font-style: italic;
+}
+
+#list {
+    text-align: right;
+}
+
+body {
+    background: #eee;
+}
+
+.chat-list {
+    padding: 0;
+    font-size: .8rem;
+}
+
+.chat-list li {
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.chat-list .chat-img {
+    float: left;
+    width: 48px;
+}
+
+.chat-list .chat-img img {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    width: 100%;
+}
+
+.chat-list .chat-message {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background: #5a99ee;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.joinleft {
+    margin-right: auto;
+    margin-left: auto;
+    background: #0db1f08a;
+    text-align: center;
+    width: 30%;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time_date {
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    padding-left: 50px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.chat-list .chat-message:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    width: 0;
+    height: 0;
+    color: #dee2e6;
+}
+
+.chat-list .chat-message h5 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    line-height: 100%;
+    font-size: .9rem;
+}
+
+.chat-list .chat-message p {
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-list .chat-body {
+    margin-left: 20px;
+    float: left;
+    width: 70%;
+}
+
+.chat-list .in .chat-message:before {
+    left: -12px;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #5a99ee;
+}
+
+.chat-list .out .chat-img {
+    float: right;
+}
+
+.chat-list .out .chat-body {
+    float: right;
+    margin-right: 20px;
+    text-align: right;
+}
+
+.chat-list .out .chat-message {
+    background: #fc6d4c;
+}
+
+.chat-list .out .chat-message:before {
+    right: -12px;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #fc6d4c;
+}
+
+.card-body {
+    height: 85vh;
+}
+
+.card .card-header:first-child {
+    -webkit-border-radius: 0.3rem 0.3rem 0 0;
+    -moz-border-radius: 0.3rem 0.3rem 0 0;
+    border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.card .card-header {
+    background: #17202b;
+    border: 0;
+    font-size: 1rem;
+    padding: .65rem 1rem;
+    position: relative;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.content {
+    margin-top: 40px;
+}
+
+#ch-form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+/*  Button Send  */
+#sendbtn {
+    /*transform: translate(-50%, -50%);*/
+    border-radius: 25px;
+    color: rgba(0, 0, 0, 0.53);
+    text-decoration: none;
+    display: inline-block;
+    font-family: Montserrat, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5em 2em;
+    border: 2px solid #cecd24;
+    transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: 3;
+}
+
+#sendbtn::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    border-radius: 25px;
+    right: 100%;
+    bottom: 0;
+    background: #cecd24;
+    transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: 1;
+}
+
+#sendbtn::after {
+    content: "";
+    display: inline-block;
+    background-image: url("https://image.flaticon.com/icons/png/128/109/109617.png");
+    position: absolute;
+    top: 0;
+    left: calc(100% - 3em);
+    right: 3em;
+    bottom: 0;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: 2;
+}
+
+#sendbtn:hover {
+    padding: 0.5em 3.5em 0.5em 0.5em;
+}
+
+#sendbtn:hover::before {
+    left: calc(100% - 3em);
+    right: 0;
+    transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+}
+
+#sendbtn:hover::after {
+    right: 0;
+    transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+    box-shadow: inset 0 0 6px rgb(0 0 0 0.66);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: mintcream;
+    border-radius: 5px;
+}
