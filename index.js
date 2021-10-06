@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', (name) => {
         //console.log(socket.username, ' disconnected');
-        io.emit('chat message', `--- ${socket.username} Left the Chat ---`);
+        io.emit('chat message', {msg: `--- ${socket.username} Left the Chat ---`, mynm: name});
 
     });
     socket.on('chat message', (msg) => {
