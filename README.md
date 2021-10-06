@@ -26,7 +26,7 @@ _Chatting App_  —  **A simple chat application using Socket.io**
 [![node][node-shield]][node-url][![GLITCH](https://img.shields.io/badge/Glitch-2800ff?style=for-the-badge&logo=glitch&logoColor=white)]()
 
 [node-shield]: https://img.shields.io/badge/Chatter-grey?style=for-the-badge&logo=node.js
-[node-url]: https://deluxe-fuchsia-talon.glitch.me/
+[node-url]: https://osnaren-chatter.glitch.me/
 
 
 ### IDE & Tools
